@@ -16,7 +16,7 @@ export default function Connections() {
   const [currentUser, setCurrentUser] = useState(null);
   const [activeTab, setActiveTab] = useState("interested"); // "interested" | "matches"
   const [loading, setLoading] = useState(true);
-  
+
   const [interestedProfiles, setInterestedProfiles] = useState([]);
   const [matchProfiles, setMatchProfiles] = useState([]);
   const [expandedContacts, setExpandedContacts] = useState({}); // { profileId: contactData }
@@ -36,28 +36,28 @@ export default function Connections() {
         .from('interests')
         .select('sender_id')
         .eq('receiver_id', user.id);
-        
+
       if (interestsData && interestsData.length > 0) {
         const senderIds = interestsData.map(i => i.sender_id);
         const { data: profilesData } = await supabase
           .from('profiles')
           .select('*')
           .in('id', senderIds);
-          
+
         if (profilesData) {
           // Check if any of these are already matches
           const { data: matchesCheck } = await supabase
             .from('matches')
             .select('user_a_id, user_b_id')
             .or(`user_a_id.eq.${user.id},user_b_id.eq.${user.id}`);
-            
+
           const matchedSet = new Set();
           if (matchesCheck) {
             matchesCheck.forEach(m => {
               matchedSet.add(m.user_a_id === user.id ? m.user_b_id : m.user_a_id);
             });
           }
-          
+
           const enrichedProfiles = profilesData.map(p => ({
             ...p,
             isMutual: matchedSet.has(p.id)
@@ -71,14 +71,14 @@ export default function Connections() {
         .from('matches')
         .select('user_a_id, user_b_id')
         .or(`user_a_id.eq.${user.id},user_b_id.eq.${user.id}`);
-        
+
       if (matchesData && matchesData.length > 0) {
         const matchIds = matchesData.map(m => m.user_a_id === user.id ? m.user_b_id : m.user_a_id);
         const { data: matchedProfilesData } = await supabase
           .from('profiles')
           .select('*')
           .in('id', matchIds);
-          
+
         if (matchedProfilesData) {
           setMatchProfiles(matchedProfilesData);
         }
@@ -140,13 +140,13 @@ export default function Connections() {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.tabs}>
-        <div 
+        <div
           className={`${styles.tab} ${activeTab === 'interested' ? styles.tabActive : ''}`}
           onClick={() => setActiveTab('interested')}
         >
           Interested in You
         </div>
-        <div 
+        <div
           className={`${styles.tab} ${activeTab === 'matches' ? styles.tabActive : ''}`}
           onClick={() => setActiveTab('matches')}
         >
@@ -175,17 +175,17 @@ export default function Connections() {
                       <span className={styles.chip}>{profile.year} • {profile.branch}</span>
                     </div>
                   </div>
-                  
+
                   {profile.isMutual ? (
                     <button className={`${styles.actionBtn} ${styles.btnMatched}`}>
                       Matched ✓
                     </button>
                   ) : (
-                    <button 
+                    <button
                       className={`${styles.actionBtn} ${styles.btnDefault}`}
                       onClick={() => handleSendInterestBack(profile.id)}
                     >
-                      Send Interest Back ✦
+                      Send Interest Back
                     </button>
                   )}
                 </div>
@@ -199,7 +199,7 @@ export default function Connections() {
         <>
           {matchProfiles.length === 0 ? (
             <div className={styles.emptyState}>
-              <p className={styles.emptyText}>you both swiped right, now figure out who pays rent first... oh wait, no matches yet.</p>
+              <p className={styles.emptyText}>you both swiped right... oh wait, no matches yet.</p>
             </div>
           ) : (
             <div className={styles.grid}>
@@ -216,8 +216,8 @@ export default function Connections() {
                       <span className={styles.chip}>{profile.year} • {profile.branch}</span>
                     </div>
                   </div>
-                  
-                  <button 
+
+                  <button
                     className={`${styles.actionBtn} ${styles.btnDefault}`}
                     onClick={() => handleViewContact(profile.id)}
                   >
