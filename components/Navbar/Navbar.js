@@ -25,10 +25,10 @@ export default function Navbar() {
         </a>
 
         <div className={styles.desktopLinks}>
-          <a href="/signup" className={styles.loginLink} id="nav-login">
+          <a href="/login" className={styles.loginLink} id="nav-login">
             Log in
           </a>
-          <a href="/signup" className={styles.signupBtn} id="nav-signup">
+          <a href="/login" className={styles.signupBtn} id="nav-signup">
             Sign Up
           </a>
         </div>
@@ -48,14 +48,14 @@ export default function Navbar() {
       {mobileOpen && (
         <div className={styles.mobileMenu} id="nav-mobile-menu">
           <a
-            href="/signup"
+            href="/login"
             className={styles.mobileLink}
             onClick={() => setMobileOpen(false)}
           >
             Log in
           </a>
           <a
-            href="/signup"
+            href="/login"
             className={styles.mobileSignup}
             onClick={() => setMobileOpen(false)}
           >

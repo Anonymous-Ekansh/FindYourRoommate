@@ -113,7 +113,7 @@ export default function Hero() {
             Match with roommates based on habits, vibe, and budget — not luck.
           </p>
           <div className={styles.ctaGroup}>
-            <a href="/signup" className={styles.primaryCta} id="hero-signup-cta">
+            <a href="/login" className={styles.primaryCta} id="hero-signup-cta">
               Sign up with college email
               {/* Wobbly arrow */}
               <svg

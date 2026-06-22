@@ -24,7 +24,7 @@ export default function FinalCTA() {
         </p>
 
         <div className={styles.ctaWrap}>
-          <a href="/signup" className={styles.ctaButton} id="final-signup-cta">
+          <a href="/login" className={styles.ctaButton} id="final-signup-cta">
             Sign up with college email
           </a>
           {/* Wobbly arrow */}
