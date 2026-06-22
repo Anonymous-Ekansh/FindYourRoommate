@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 2rem;
 }
 
 /* ── Top Bar ── */
@@ -487,27 +487,17 @@
   transform: translateX(16px);
 }
 
-/* ── Sticky Bottom Action Bar ── */
+/* ── Bottom Action Bar ── */
 .bottomBar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--ink-black);
-  border-top: 4px solid var(--ink-black);
-  padding: 1rem 2rem;
-  z-index: 50;
+  padding: 2rem;
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .bottomInner {
-  max-width: 800px;
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
+  justify-content: center;
 }
 
 .saveBtn {
@@ -540,7 +530,7 @@
 /* ── Success Toast ── */
 .toast {
   position: fixed;
-  bottom: 90px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%) translateY(120px);
   background-color: var(--lime-mint);
