@@ -308,7 +308,7 @@ export default function MyProfile() {
                 <img src={formData.photo_url} alt="Profile" className={styles.currentPhoto} />
               ) : (
                 <div className={styles.photoPlaceholder}>
-                  <img src={formData.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt="Default Avatar" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                  <img src={formData.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt="Default Avatar" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top' }} />
                 </div>
               )}
               <div className={styles.photoOverlay}>change photo</div>

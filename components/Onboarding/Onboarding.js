@@ -242,7 +242,7 @@ export default function Onboarding() {
                   <div className={styles.dropZoneText}>
                     {loading ? "Uploading..." : (
                       <>
-                        <img src={formData.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt="Default Avatar" style={{ width: '80px', height: '80px', borderRadius: '50%', margin: '0 auto 10px', display: 'block', border: '3px solid var(--ink-black)' }} />
+                        <img src={formData.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt="Default Avatar" style={{ width: '80px', height: '80px', borderRadius: '50%', margin: '0 auto 10px', display: 'block', border: '3px solid var(--ink-black)', objectFit: 'cover', objectPosition: 'top' }} />
                         drop your face here
                       </>
                     )}

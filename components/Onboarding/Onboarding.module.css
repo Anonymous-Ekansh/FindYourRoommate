@@ -275,6 +275,7 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top;
   border: 3px solid var(--ink-black);
   margin: 0 auto 1rem;
 }

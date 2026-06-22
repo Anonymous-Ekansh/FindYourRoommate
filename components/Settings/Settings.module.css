@@ -211,6 +211,7 @@
   border-radius: 50%;
   border: 2px solid var(--ink-black);
   object-fit: cover;
+  object-position: top;
   flex-shrink: 0;
 }
 
@@ -220,6 +221,8 @@
   border-radius: 50%;
   border: 2px solid var(--ink-black);
   background-color: var(--soft-yellow);
+  object-fit: cover;
+  object-position: top;
   flex-shrink: 0;
 }
 

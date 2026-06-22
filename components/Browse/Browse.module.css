@@ -44,6 +44,7 @@
   border-radius: 50%;
   border: 2px solid var(--cream-white);
   object-fit: cover;
+  object-position: top;
   background-color: var(--coral-red);
 }
 
@@ -201,6 +202,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .cardInfo {
