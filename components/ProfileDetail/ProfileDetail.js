@@ -133,7 +133,7 @@ export default function ProfileDetail({ profileId }) {
             {profile.photo_url ? (
               <img src={profile.photo_url} alt={profile.name} className={styles.heroPhoto} />
             ) : (
-              <div className={styles.heroPhoto} style={{ backgroundColor: 'var(--soft-yellow)' }}></div>
+              <img src={profile.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt={profile.name} className={styles.heroPhoto} style={{ backgroundColor: 'var(--soft-yellow)' }} />
             )}
           </div>
           

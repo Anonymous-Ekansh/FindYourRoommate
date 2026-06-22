@@ -19,6 +19,7 @@ export default function Onboarding() {
 
   const [formData, setFormData] = useState({
     name: "",
+    gender: "",
     year: "",
     branch: "",
     about_me: "",
@@ -85,7 +86,7 @@ export default function Onboarding() {
 
   const validateStep = () => {
     if (step === 1) {
-      if (!formData.name || !formData.year || !formData.branch) {
+      if (!formData.name || !formData.gender || !formData.year || !formData.branch) {
         setError("Please fill out all fields.");
         return false;
       }
@@ -145,6 +146,7 @@ export default function Onboarding() {
       const { error: profileError } = await supabase.from('profiles').upsert({
         id: userId,
         name: formData.name,
+        gender: formData.gender,
         year: formData.year,
         branch: formData.branch,
         about_me: formData.about_me,
@@ -198,6 +200,17 @@ export default function Onboarding() {
             </div>
 
             <div className={styles.formGroup}>
+              <label className={styles.label}>Gender</label>
+              <div className={styles.tapCardGroup}>
+                {['Male', 'Female'].map(opt => (
+                  <div key={opt} className={`${styles.tapCard} ${formData.gender === opt ? styles.tapCardSelected : ''}`} onClick={() => handleChange('gender', opt)}>
+                    <span className={styles.tapCardText}>{opt}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.formGroup}>
               <label className={styles.label}>Year</label>
               <div className={styles.pillGroup}>
                 {['1st Year', '2nd Year', '3rd Year', '4th Year', 'Masters'].map(y => (
@@ -226,7 +239,14 @@ export default function Onboarding() {
                 {formData.photo_url ? (
                   <img src={formData.photo_url} alt="Profile" className={styles.photoPreview} />
                 ) : (
-                  <div className={styles.dropZoneText}>{loading ? "Uploading..." : "drop your face here 📸"}</div>
+                  <div className={styles.dropZoneText}>
+                    {loading ? "Uploading..." : (
+                      <>
+                        <img src={formData.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt="Default Avatar" style={{ width: '80px', height: '80px', borderRadius: '50%', margin: '0 auto 10px', display: 'block', border: '3px solid var(--ink-black)' }} />
+                        drop your face here
+                      </>
+                    )}
+                  </div>
                 )}
                 <input type="file" accept="image/*" onChange={handlePhotoUpload} className={styles.dropZoneInput} disabled={loading} />
               </div>

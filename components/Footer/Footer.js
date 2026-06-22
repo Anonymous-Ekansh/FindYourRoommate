@@ -6,7 +6,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.topRow}>
           <div className={styles.brand}>
-            <span className={styles.logo}>Haven</span>
+            <span className={styles.logo}>Roomy</span>
             <p className={styles.tagline}>
               Roommate matching based on vibe, not luck.
             </p>
@@ -25,7 +25,7 @@ export default function Footer() {
             Built by students, for students.
           </p>
           <p className={styles.copyright}>
-            © 2026 Haven
+            © 2026 Roomy
           </p>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import MyProfile from "../../../components/MyProfile/MyProfile";
 
 export const metadata = {
-  title: "My Profile — Haven",
-  description: "View and edit your Haven roommate profile.",
+  title: "My Profile — Roomy",
+  description: "View and edit your Roomy roommate profile.",
 };
 
 export default function MyProfilePage() {

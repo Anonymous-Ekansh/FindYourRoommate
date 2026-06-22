@@ -125,10 +125,10 @@ export default function Browse() {
     <div className={styles.browseSection}>
       {/* Navbar */}
       <nav className={styles.navbar}>
-        <Link href="/" className={styles.navLogo}>Haven</Link>
+        <Link href="/" className={styles.navLogo}>Roomy</Link>
         <Link href="/profile/me" className={styles.navProfile}>
           <img 
-            src={currentUser?.user_metadata?.avatar_url || "/default-avatar.png"} 
+            src={currentUser?.user_metadata?.avatar_url || "/avatar-male.png"} 
             alt="My Avatar" 
             className={styles.avatar} 
           />
@@ -258,7 +258,7 @@ export default function Browse() {
                     {profile.photo_url ? (
                       <img src={profile.photo_url} alt={profile.name} className={styles.cardPhoto} />
                     ) : (
-                      <div className={styles.cardPhoto} style={{ backgroundColor: 'var(--soft-yellow)' }}></div>
+                      <img src={profile.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt={profile.name} className={styles.cardPhoto} style={{ backgroundColor: 'var(--soft-yellow)' }} />
                     )}
                   </div>
                   

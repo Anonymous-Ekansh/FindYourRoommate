@@ -1,5 +1,5 @@
 /* ============================================
-   HAVEN — My Profile Page Styles
+   ROOMY — My Profile Page Styles
    ============================================ */
 
 .pageContainer {
@@ -510,10 +510,10 @@
 
 .saveBtn {
   padding: 0.75rem 2.5rem;
-  border: 3px solid var(--cream-white);
+  border: 3px solid var(--ink-black);
   border-radius: 12px;
-  background-color: var(--coral-red);
-  color: var(--cream-white);
+  background-color: var(--soft-yellow);
+  color: var(--ink-black);
   font-family: var(--font-fredoka);
   font-size: 1.25rem;
   font-weight: 600;

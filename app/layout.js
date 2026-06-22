@@ -16,9 +16,9 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata = {
-  title: "Haven — Find Your Perfect College Roommate",
+  title: "Roomy — Find Your Perfect College Roommate",
   description:
-    "Stop rooming with a stranger. Haven matches you with roommates based on habits, vibe, and budget — not luck. Built by students, for students.",
+    "Stop rooming with a stranger. Roomy matches you with roommates based on habits, vibe, and budget — not luck. Built by students, for students.",
   keywords: [
     "roommate",
     "college",
@@ -28,7 +28,7 @@ export const metadata = {
     "find roommate",
   ],
   openGraph: {
-    title: "Haven — Find Your Perfect College Roommate",
+    title: "Roomy — Find Your Perfect College Roommate",
     description:
       "Match with roommates based on habits, vibe, and budget — not luck.",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Haven — Find Your Perfect College Roommate",
+    title: "Roomy — Find Your Perfect College Roommate",
     description:
       "Match with roommates based on habits, vibe, and budget — not luck.",
   },

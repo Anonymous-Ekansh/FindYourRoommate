@@ -31,7 +31,7 @@ export default function Login() {
           {/* Sticker Card */}
           <div className={styles.card}>
             <h1 className={styles.heading}>
-              Haven
+              Roomy
               <svg className={styles.doodleUnderline} width="120" height="20" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 15 Q 30 5 60 12 T 115 10" stroke="black" strokeWidth="4" strokeLinecap="round" fill="none" />
               </svg>

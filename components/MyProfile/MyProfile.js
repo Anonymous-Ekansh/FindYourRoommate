@@ -47,6 +47,7 @@ export default function MyProfile() {
 
   const [formData, setFormData] = useState({
     name: "",
+    gender: "",
     year: "",
     branch: "",
     about_me: "",
@@ -93,6 +94,7 @@ export default function MyProfile() {
       if (profileData) {
         setFormData({
           name: profileData.name || "",
+          gender: profileData.gender || "",
           year: profileData.year || "",
           branch: profileData.branch || "",
           about_me: profileData.about_me || "",
@@ -158,6 +160,7 @@ export default function MyProfile() {
     try {
       const profileUpdate = {
         name: formData.name,
+        gender: formData.gender,
         year: formData.year,
         branch: formData.branch,
         about_me: formData.about_me,
@@ -305,11 +308,7 @@ export default function MyProfile() {
                 <img src={formData.photo_url} alt="Profile" className={styles.currentPhoto} />
               ) : (
                 <div className={styles.photoPlaceholder}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="5" width="18" height="14" rx="2" stroke="var(--ink-black)" strokeWidth="2"/>
-                    <circle cx="12" cy="12" r="3" stroke="var(--ink-black)" strokeWidth="2"/>
-                    <path d="M9 5V4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V5" stroke="var(--ink-black)" strokeWidth="2"/>
-                  </svg>
+                  <img src={formData.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt="Default Avatar" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
                 </div>
               )}
               <div className={styles.photoOverlay}>change photo</div>
@@ -333,6 +332,21 @@ export default function MyProfile() {
               onChange={(e) => handleChange("name", e.target.value)}
               placeholder="Your full name"
             />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Gender</label>
+            <div className={styles.tapCardGroup}>
+              {['Male', 'Female'].map(opt => (
+                <div
+                  key={opt}
+                  className={`${styles.tapCard} ${formData.gender === opt ? styles.tapCardSelected : ''}`}
+                  onClick={() => handleChange('gender', opt)}
+                >
+                  <span className={styles.tapCardText}>{opt}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className={styles.formGroup}>

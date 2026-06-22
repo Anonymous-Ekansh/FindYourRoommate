@@ -46,7 +46,7 @@ export default function Settings() {
       // Fetch profile for share_pref, name, photo_url
       const { data: profile } = await supabase
         .from('profiles')
-        .select('share_pref, name, photo_url')
+        .select('share_pref, name, photo_url, gender')
         .eq('id', user.id)
         .single();
 
@@ -61,6 +61,7 @@ export default function Settings() {
         name: profile?.name || "Your Name",
         email: user.email,
         photo_url: profile?.photo_url || "",
+        gender: profile?.gender || "",
       });
 
       setContactData({
@@ -220,7 +221,7 @@ export default function Settings() {
             {accountData.photo_url ? (
               <img src={accountData.photo_url} alt="Profile" className={styles.accountAvatar} />
             ) : (
-              <div className={styles.accountAvatarPlaceholder}></div>
+              <img src={accountData.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt="Profile" className={styles.accountAvatarPlaceholder} />
             )}
             <div className={styles.accountDetails}>
               <span className={styles.accountName}>{accountData.name}</span>

@@ -21,7 +21,7 @@ export default function Navbar() {
     >
       <div className={styles.inner}>
         <a href="/" className={styles.logo} id="nav-logo">
-          Haven
+          Roomy
         </a>
 
         <div className={styles.desktopLinks}>
