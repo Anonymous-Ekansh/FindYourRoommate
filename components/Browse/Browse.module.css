@@ -32,8 +32,9 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: var(--font-body);
-  font-weight: 500;
+  font-family: var(--font-fredoka);
+  font-size: 1.125rem;
+  font-weight: 600;
   text-decoration: none;
   color: var(--cream-white);
 }

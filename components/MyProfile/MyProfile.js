@@ -246,7 +246,7 @@ export default function MyProfile() {
               {formData.photo_url ? (
                 <img src={formData.photo_url} alt={formData.name} className={styles.previewPhoto} />
               ) : (
-                <div className={styles.previewPhoto} style={{ backgroundColor: 'var(--soft-yellow)' }}></div>
+                <img src={formData.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt={formData.name} className={styles.previewPhoto} style={{ backgroundColor: 'var(--soft-yellow)' }} />
               )}
             </div>
             <div className={styles.previewInfo}>

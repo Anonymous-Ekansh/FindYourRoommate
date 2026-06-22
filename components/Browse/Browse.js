@@ -239,7 +239,7 @@ export default function Browse() {
           </div>
         ) : filteredProfiles.length === 0 ? (
           <div className={styles.emptyState}>
-            <p className={styles.emptyText}>nobody matches your vibe... yet. maybe lower the bar a little *dead*</p>
+            <p className={styles.emptyText}>nobody matches your vibe... yet.</p>
           </div>
         ) : (
           <div className={styles.grid}>
