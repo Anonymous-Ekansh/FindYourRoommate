@@ -2,7 +2,6 @@
   background: var(--lime-mint);
   padding: clamp(4rem, 10vw, 7rem) 0;
   position: relative;
-  z-index: 1;
   border-bottom: var(--border-thick);
 }
 

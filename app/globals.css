@@ -166,6 +166,8 @@ ul, ol {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 2;
 }
 
 /* ── Section base ── */

@@ -6,10 +6,12 @@ import SocialProof from "@/components/SocialProof/SocialProof";
 import FAQ from "@/components/FAQ/FAQ";
 import FinalCTA from "@/components/FinalCTA/FinalCTA";
 import Footer from "@/components/Footer/Footer";
+import CursorGlow from "@/components/CursorGlow/CursorGlow";
 
 export default function Home() {
   return (
     <>
+      <CursorGlow />
       <Navbar />
       <main>
         <Hero />

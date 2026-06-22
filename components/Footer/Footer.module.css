@@ -3,7 +3,7 @@
   color: var(--cream-white);
   padding: 4rem 0 2.5rem;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Ensure child text elements inherit color on dark background */
