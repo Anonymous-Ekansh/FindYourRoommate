@@ -126,7 +126,7 @@ export default function Browse() {
       {/* Navbar */}
       <nav className={styles.navbar}>
         <Link href="/" className={styles.navLogo}>Haven</Link>
-        <Link href="/profile" className={styles.navProfile}>
+        <Link href="/profile/me" className={styles.navProfile}>
           <img 
             src={currentUser?.user_metadata?.avatar_url || "/default-avatar.png"} 
             alt="My Avatar" 
