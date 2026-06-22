@@ -235,6 +235,9 @@ export default function MyProfile() {
         <Link href="/browse" className={styles.backBtn}>
           ← back to browse
         </Link>
+        <Link href="/connections" className={styles.connectionsBtn}>
+          Who's interested?
+        </Link>
       </div>
 
       {/* ── Preview Section ── */}

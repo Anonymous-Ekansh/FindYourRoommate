@@ -126,14 +126,19 @@ export default function Browse() {
       {/* Navbar */}
       <nav className={styles.navbar}>
         <Link href="/" className={styles.navLogo}>Roomy</Link>
-        <Link href="/profile/me" className={styles.navProfile}>
-          <img 
-            src={currentUser?.user_metadata?.avatar_url || "/avatar-male.png"} 
-            alt="My Avatar" 
-            className={styles.avatar} 
-          />
-          My Profile
-        </Link>
+        <div className={styles.navActions}>
+          <Link href="/connections" className={styles.connectionsBtn}>
+            Who's interested?
+          </Link>
+          <Link href="/profile/me" className={styles.navProfile}>
+            <img 
+              src={currentUser?.user_metadata?.avatar_url || "/avatar-male.png"} 
+              alt="My Avatar" 
+              className={styles.avatar} 
+            />
+            My Profile
+          </Link>
+        </div>
       </nav>
 
       {/* Filter Bar */}
