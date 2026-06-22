@@ -1,0 +1,208 @@
+.pageContainer {
+  background-color: var(--cream-white);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.tab {
+  font-family: var(--font-fredoka);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink-black);
+  padding: 0.5rem 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  border-bottom: 4px solid transparent;
+}
+
+.tab:hover {
+  opacity: 0.8;
+}
+
+.tabActive {
+  opacity: 1;
+  border-bottom: 4px solid var(--ink-black);
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* ── Card ── */
+.card {
+  background-color: #FFFFFF;
+  border: 3px solid var(--ink-black);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 4px 4px 0px var(--ink-black);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: rotate(-1deg);
+  transition: transform 0.2s;
+}
+
+.card:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.card:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.photoWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-black);
+  overflow: hidden;
+  background-color: var(--soft-yellow);
+  flex-shrink: 0;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-family: var(--font-fredoka);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink-black);
+}
+
+.chip {
+  font-family: var(--font-space-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid var(--ink-black);
+  border-radius: 6px;
+  background-color: var(--soft-yellow);
+  color: var(--ink-black);
+  display: inline-block;
+  width: fit-content;
+}
+
+/* ── Buttons ── */
+.actionBtn {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--ink-black);
+  border-radius: 8px;
+  font-family: var(--font-fredoka);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btnDefault {
+  background-color: var(--ink-black);
+  color: var(--cream-white);
+}
+
+.btnDefault:hover {
+  transform: scale(0.95);
+}
+
+.btnMatched {
+  background-color: var(--lime-mint);
+  color: var(--ink-black);
+  pointer-events: none;
+}
+
+/* ── Inline Contact Expand ── */
+.contactExpand {
+  margin-top: 0.5rem;
+  background-color: var(--coral-red);
+  border: 2px solid var(--ink-black);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--cream-white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: slideDown 0.2s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contactRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.copyBtn {
+  font-family: var(--font-space-mono);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--cream-white);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--cream-white);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copyBtn:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* ── Empty State ── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  gap: 1.5rem;
+}
+
+.emptyText {
+  font-family: var(--font-fredoka);
+  font-size: 1.5rem;
+  color: var(--ink-black);
+  max-width: 500px;
+}

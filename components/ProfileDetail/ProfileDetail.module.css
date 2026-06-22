@@ -1,0 +1,319 @@
+.pageContainer {
+  background-color: var(--cream-white);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 100px; /* space for sticky bar */
+}
+
+/* ── Top Bar ── */
+.topBar {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.backBtn {
+  font-family: var(--font-space-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.backBtn:hover {
+  opacity: 0.7;
+}
+
+/* ── Main Content ── */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ── Hero Section ── */
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.heroPhotoWrapper {
+  width: 250px;
+  height: 250px;
+  flex-shrink: 0;
+  border: 4px solid var(--ink-black);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 6px 6px 0px var(--ink-black);
+  background-color: var(--soft-yellow);
+}
+
+.heroPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.name {
+  font-family: var(--font-fredoka);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--ink-black);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.chipGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  font-family: var(--font-space-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--ink-black);
+  border-radius: 8px;
+}
+
+.chipYellow { background-color: var(--soft-yellow); }
+.chipMint { background-color: var(--lime-mint); }
+.chipWhite { background-color: var(--cream-white); }
+.chipCoral { background-color: var(--coral-red); color: var(--cream-white); }
+
+.about {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--ink-black);
+  margin-top: 0.5rem;
+}
+
+/* ── Info Grid ── */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.infoCard {
+  border: 3px solid var(--ink-black);
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  padding: 1.5rem;
+  box-shadow: 4px 4px 0px var(--ink-black);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transform: rotate(-1deg);
+}
+
+.infoCard:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.infoLabel {
+  font-family: var(--font-space-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.infoValue {
+  font-family: var(--font-fredoka);
+  font-size: 1.25rem;
+  color: var(--ink-black);
+  font-weight: 500;
+}
+
+/* ── Dots Display ── */
+.dotsWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-black);
+  background-color: var(--cream-white);
+}
+
+.dotFilled {
+  background-color: var(--coral-red);
+}
+
+/* ── Sticky Bottom Bar ── */
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--cream-white);
+  border-top: 4px solid var(--ink-black);
+  padding: 1.5rem 2rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.actionWrapper {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  width: 100%;
+  padding: 1rem;
+  border: 3px solid var(--ink-black);
+  border-radius: 12px;
+  font-family: var(--font-fredoka);
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btnDefault {
+  background-color: var(--ink-black);
+  color: var(--cream-white);
+}
+
+.btnDefault:hover {
+  transform: scale(0.98);
+}
+
+.btnSent {
+  background-color: var(--lime-mint);
+  color: var(--ink-black);
+  pointer-events: none;
+}
+
+.sentSubtext {
+  font-family: var(--font-space-mono);
+  font-size: 0.85rem;
+  color: var(--ink-black);
+  opacity: 0.8;
+}
+
+/* ── Matched Banner ── */
+.matchBanner {
+  width: 100%;
+  background-color: var(--coral-red);
+  color: var(--cream-white);
+  padding: 1rem;
+  border: 3px solid var(--ink-black);
+  border-radius: 12px;
+  font-family: var(--font-fredoka);
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.confettiSvg {
+  fill: var(--cream-white);
+}
+
+/* ── Contact Card ── */
+.contactCard {
+  width: 100%;
+  border: 3px solid var(--ink-black);
+  border-radius: 12px;
+  background-color: var(--soft-yellow);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 4px 4px 0px var(--ink-black);
+  transform: rotate(1deg);
+}
+
+.contactRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--ink-black);
+}
+
+.copyBtn {
+  font-family: var(--font-space-mono);
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid var(--ink-black);
+  border-radius: 6px;
+  background-color: var(--cream-white);
+  color: var(--ink-black);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copyBtn:hover {
+  background-color: var(--lime-mint);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .heroPhotoWrapper {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .chipGroup {
+    justify-content: center;
+  }
+  
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .content {
+    padding: 0 1rem 2rem;
+  }
+}

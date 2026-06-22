@@ -1,0 +1,727 @@
+/* ============================================
+   HAVEN — My Profile Page Styles
+   ============================================ */
+
+.pageContainer {
+  background-color: var(--soft-yellow);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+/* ── Top Bar ── */
+.topBar {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.backBtn {
+  font-family: var(--font-space-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.backBtn:hover {
+  opacity: 0.7;
+}
+
+/* ── Preview Section ── */
+.previewSection {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.previewLabel {
+  font-family: var(--font-space-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.previewCard {
+  border: 4px solid var(--ink-black);
+  border-radius: 16px;
+  background-color: var(--cream-white);
+  box-shadow: 8px 8px 0px var(--ink-black);
+  padding: 2rem;
+  transform: rotate(-0.5deg);
+}
+
+.previewHero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.previewPhotoWrapper {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  border: 4px solid var(--ink-black);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0px var(--ink-black);
+  background-color: var(--soft-yellow);
+}
+
+.previewPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previewInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.previewName {
+  font-family: var(--font-fredoka);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--ink-black);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.chipGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  font-family: var(--font-space-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--ink-black);
+  border-radius: 8px;
+}
+
+.chipYellow { background-color: var(--soft-yellow); }
+.chipMint { background-color: var(--lime-mint); }
+.chipWhite { background-color: var(--cream-white); }
+.chipCoral { background-color: var(--coral-red); color: var(--cream-white); }
+
+.previewAbout {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-black);
+  margin-top: 0.25rem;
+}
+
+.previewGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.previewStatCard {
+  border: 2px solid var(--ink-black);
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transform: rotate(-1deg);
+}
+
+.previewStatCard:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.previewStatLabel {
+  font-family: var(--font-space-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.dotsWrapper {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-black);
+  background-color: var(--cream-white);
+}
+
+.dotFilled {
+  background-color: var(--coral-red);
+}
+
+/* ── Edit Form Section ── */
+.editSection {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.editCard {
+  border: 4px solid var(--ink-black);
+  border-radius: 16px;
+  background-color: var(--cream-white);
+  box-shadow: 8px 8px 0px var(--ink-black);
+  padding: 2.5rem 2rem 3rem;
+  transform: rotate(-0.5deg);
+}
+
+.sectionHeader {
+  font-family: var(--font-fredoka);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--ink-black);
+  margin-bottom: 0.25rem;
+  margin-top: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionHeader:first-child {
+  margin-top: 0;
+}
+
+.squigglyUnderline {
+  display: block;
+  width: 100%;
+  height: 8px;
+  margin-top: 2px;
+}
+
+.formGroup {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--ink-black);
+  font-size: 0.95rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--ink-black);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background-color: var(--cream-white);
+  color: var(--ink-black);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--coral-red);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.charCount {
+  font-family: var(--font-space-mono);
+  font-size: 0.75rem;
+  text-align: right;
+  color: var(--ink-black);
+  opacity: 0.7;
+}
+
+/* ── Photo Upload ── */
+.photoUploadArea {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.currentPhotoWrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.currentPhoto {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--ink-black);
+}
+
+.photoPlaceholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px dashed var(--ink-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.photoOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--cream-white);
+  font-family: var(--font-space-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.25rem 0;
+  border-radius: 0 0 50px 50px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.currentPhotoWrapper:hover .photoOverlay {
+  opacity: 1;
+}
+
+.photoHiddenInput {
+  display: none;
+}
+
+.uploadHelpText {
+  font-family: var(--font-space-mono);
+  font-size: 0.8rem;
+  color: var(--ink-black);
+  opacity: 0.7;
+}
+
+/* ── Pill Selectors ── */
+.pillGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pill {
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--ink-black);
+  border-radius: 999px;
+  background-color: var(--cream-white);
+  color: var(--ink-black);
+  font-family: var(--font-body);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pillSelected {
+  background-color: var(--ink-black);
+  color: var(--cream-white);
+}
+
+/* ── Tap Cards ── */
+.tapCardGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.tapCard {
+  border: 2px solid var(--ink-black);
+  border-radius: 12px;
+  background-color: var(--cream-white);
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: rotate(-2deg);
+}
+
+.tapCard:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.tapCardSelected {
+  transform: rotate(0deg) scale(1.05) !important;
+  border-width: 4px;
+  background-color: var(--coral-red);
+}
+
+.tapCardSelected .tapCardText {
+  font-weight: 600;
+  color: var(--cream-white);
+}
+
+.tapCardText {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ── Custom Sliders ── */
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 12px;
+  background: var(--cream-white);
+  border: 2px solid var(--ink-black);
+  border-radius: 6px;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--coral-red);
+  border: 2px solid var(--ink-black);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.slider::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+}
+
+/* ── Toggle Switches ── */
+.toggleGroup {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.toggleLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.toggleCheckbox {
+  appearance: none;
+  width: 40px;
+  height: 24px;
+  background-color: var(--cream-white);
+  border: 2px solid var(--ink-black);
+  border-radius: 12px;
+  position: relative;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.toggleCheckbox::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--ink-black);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.toggleCheckbox:checked {
+  background-color: var(--lime-mint);
+}
+
+.toggleCheckbox:checked::after {
+  transform: translateX(16px);
+}
+
+/* ── Sticky Bottom Action Bar ── */
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--ink-black);
+  border-top: 4px solid var(--ink-black);
+  padding: 1rem 2rem;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+}
+
+.bottomInner {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.saveBtn {
+  padding: 0.75rem 2.5rem;
+  border: 3px solid var(--cream-white);
+  border-radius: 12px;
+  background-color: var(--coral-red);
+  color: var(--cream-white);
+  font-family: var(--font-fredoka);
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.saveBtn:hover {
+  transform: scale(0.96);
+}
+
+.saveBtn:active {
+  transform: scale(0.92) translateY(2px);
+}
+
+.saveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Success Toast ── */
+.toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background-color: var(--lime-mint);
+  color: var(--ink-black);
+  border: 3px solid var(--ink-black);
+  border-radius: 12px;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-fredoka);
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 4px 4px 0px var(--ink-black);
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.toastVisible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Delete Section ── */
+.deleteSection {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  width: 100%;
+  padding: 0 2rem 2rem;
+  text-align: center;
+}
+
+.deleteLink {
+  font-family: var(--font-space-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--coral-red);
+  cursor: pointer;
+  transition: opacity 0.2s;
+  background: none;
+  border: none;
+}
+
+.deleteLink:hover {
+  opacity: 0.7;
+}
+
+/* ── Delete Modal ── */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modalCard {
+  background-color: var(--cream-white);
+  border: 4px solid var(--ink-black);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 8px 8px 0px var(--ink-black);
+  transform: rotate(-1deg);
+}
+
+.modalTitle {
+  font-family: var(--font-fredoka);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink-black);
+  margin-bottom: 0.75rem;
+}
+
+.modalText {
+  font-family: var(--font-space-mono);
+  font-size: 0.85rem;
+  color: var(--ink-black);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modalBtn {
+  padding: 0.75rem 1.5rem;
+  border: 3px solid var(--ink-black);
+  border-radius: 12px;
+  font-family: var(--font-fredoka);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modalBtn:hover {
+  transform: scale(0.96);
+}
+
+.modalBtnCancel {
+  background-color: var(--ink-black);
+  color: var(--cream-white);
+}
+
+.modalBtnDelete {
+  background-color: var(--coral-red);
+  color: var(--cream-white);
+}
+
+/* ── Error Text ── */
+.errorText {
+  color: #D32F2F;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-family: var(--font-space-mono);
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .previewHero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .previewPhotoWrapper {
+    width: 140px;
+    height: 140px;
+  }
+
+  .chipGroup {
+    justify-content: center;
+  }
+
+  .previewGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .previewSection {
+    padding: 0 1rem;
+  }
+
+  .editSection {
+    padding: 0 1rem;
+  }
+
+  .editCard {
+    padding: 2rem 1.25rem 2.5rem;
+    transform: none;
+  }
+
+  .previewCard {
+    transform: none;
+  }
+
+  .topBar {
+    padding: 1rem;
+  }
+
+  .bottomInner {
+    justify-content: center;
+  }
+
+  .photoUploadArea {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modalCard {
+    transform: none;
+  }
+}
