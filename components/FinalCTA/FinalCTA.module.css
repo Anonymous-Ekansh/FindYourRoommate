@@ -1,0 +1,97 @@
+.section {
+  background: var(--coral-red);
+  padding: clamp(5rem, 12vw, 8rem) 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-bottom: var(--border-thick);
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 2;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  color: var(--ink-black);
+  margin-bottom: 1rem;
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  color: var(--ink-black);
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.ctaWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.ctaButton {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cream-white);
+  background: var(--ink-black);
+  border: var(--border-thick);
+  border-color: var(--ink-black);
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 4px 4px 0px var(--cream-white);
+  transition: var(--transition-bounce);
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 0px var(--cream-white);
+  background: #222222;
+}
+
+.ctaButton:active {
+  transform: scale(0.97);
+  box-shadow: 2px 2px 0px var(--cream-white);
+}
+
+.wobblyArrow {
+  position: absolute;
+  right: -58px;
+  top: -24px;
+  animation: bounceArrow 1.5s ease-in-out infinite;
+}
+
+.wobblyArrow path,
+.wobblyArrow stroke {
+  stroke: var(--ink-black) !important;
+}
+
+/* ── Doodle decorations ── */
+.squiggle {
+  position: absolute;
+  bottom: 12%;
+  left: 15%;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .wobblyArrow {
+    display: none;
+  }
+
+  .squiggle {
+    display: none;
+  }
+}

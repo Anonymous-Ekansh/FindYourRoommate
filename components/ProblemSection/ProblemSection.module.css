@@ -1,0 +1,146 @@
+.section {
+  background: var(--lime-mint);
+  padding: clamp(4rem, 10vw, 7rem) 0;
+  position: relative;
+  z-index: 1;
+  border-bottom: var(--border-thick);
+}
+
+.tornTop {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: var(--lime-mint);
+  clip-path: polygon(
+    0% 100%, 2% 50%, 5% 80%, 8% 40%, 12% 70%, 15% 35%, 18% 75%,
+    22% 45%, 25% 85%, 28% 40%, 32% 70%, 35% 45%, 38% 80%,
+    42% 50%, 45% 75%, 48% 35%, 52% 65%, 55% 45%, 58% 80%,
+    62% 40%, 65% 70%, 68% 50%, 72% 85%, 75% 45%, 78% 75%,
+    82% 40%, 85% 65%, 88% 50%, 92% 80%, 95% 45%, 98% 70%, 100% 100%
+  );
+  z-index: 2;
+}
+
+.tornBottom {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: var(--lime-mint);
+  clip-path: polygon(
+    0% 0%, 2% 50%, 5% 20%, 8% 60%, 12% 30%, 15% 65%, 18% 25%,
+    22% 55%, 25% 15%, 28% 60%, 32% 30%, 35% 55%, 38% 20%,
+    42% 50%, 45% 25%, 48% 65%, 52% 35%, 55% 55%, 58% 20%,
+    62% 60%, 65% 30%, 68% 50%, 72% 15%, 75% 55%, 78% 25%,
+    82% 60%, 85% 35%, 88% 50%, 92% 20%, 95% 55%, 98% 30%, 100% 0%
+  );
+  z-index: 2;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4.5vw, 2.9rem);
+  line-height: 1.2;
+  color: var(--ink-black);
+  margin-bottom: 2.5rem;
+}
+
+/* Emphasis word on Lime Mint section background should be Coral Red */
+.strikethrough {
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-black);
+  text-decoration-thickness: 3px;
+  color: var(--coral-red);
+}
+
+.painPoints {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.painCard {
+  background: var(--cream-white);
+  border: var(--border-thick);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  text-align: left;
+  transition: var(--transition-bounce);
+}
+
+.painCard:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: rotate(0deg) translateY(-4px) !important;
+}
+
+.painCard p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink-black);
+}
+
+.closer {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--ink-black);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.closer strong {
+  color: var(--coral-red);
+}
+
+.stickerDecor {
+  position: absolute;
+  bottom: -10px;
+  right: -20px;
+}
+
+.sticker {
+  display: inline-block;
+  padding: 0.3em 0.75em;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--sticky-pink);
+  border: var(--border-thin);
+  box-shadow: var(--shadow-sticker);
+  transform: rotate(5deg);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .stickerDecor {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .painPoints {
+    grid-template-columns: 1fr;
+  }
+}

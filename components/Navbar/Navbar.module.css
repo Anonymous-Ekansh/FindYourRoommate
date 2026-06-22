@@ -1,0 +1,184 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.2rem 1.5rem;
+  transition: var(--transition-smooth);
+  background: #000000;
+  border-bottom: var(--border-thick);
+}
+
+.navbar.scrolled {
+  padding: 0.85rem 1.5rem;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.85rem;
+  color: var(--cream-white);
+  text-decoration: none;
+  transform: rotate(-2deg);
+  display: inline-block;
+  transition: var(--transition-bounce);
+  letter-spacing: -0.5px;
+}
+
+.logo:hover {
+  transform: rotate(0deg) scale(1.05);
+  color: var(--soft-yellow);
+}
+
+.desktopLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.loginLink {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cream-white);
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.loginLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--cream-white);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.loginLink:hover::after {
+  transform: scaleX(1);
+}
+
+.signupBtn {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #000000;
+  background: var(--coral-red);
+  border: var(--border-thick);
+  border-color: var(--cream-white);
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 4px 4px 0px var(--cream-white);
+  transition: var(--transition-bounce);
+  transform: rotate(1deg);
+}
+
+.signupBtn:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 5px 5px 0px var(--cream-white);
+  background: var(--soft-yellow);
+}
+
+.signupBtn:active {
+  transform: scale(0.97);
+  box-shadow: 2px 2px 0px var(--cream-white);
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--cream-white);
+  border-radius: 3px;
+  transition: var(--transition-smooth);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ── Mobile Menu ── */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 999;
+  animation: fadeInUp 0.3s ease;
+}
+
+.mobileLink {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: var(--cream-white);
+  text-decoration: none;
+}
+
+.mobileSignup {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #000000;
+  background: var(--coral-red);
+  border: var(--border-thick);
+  border-color: var(--cream-white);
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  box-shadow: 4px 4px 0px var(--cream-white);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .desktopLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}

@@ -1,0 +1,154 @@
+.section {
+  background: var(--soft-yellow);
+  padding: clamp(4rem, 10vw, 7rem) 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: var(--border-thick);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.labelChip {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--ink-black);
+  color: var(--cream-white);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.exclamation {
+  transform: rotate(8deg);
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4.5vw, 2.9rem);
+  line-height: 1.15;
+  text-align: center;
+  color: var(--ink-black);
+  margin-bottom: 3rem;
+}
+
+/* Emphasis inside Soft Yellow background should be Coral Red */
+.headingAccent {
+  color: var(--coral-red);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.stepCard {
+  background: var(--card-bg);
+  border: var(--border-thick);
+  border-radius: 16px;
+  padding: 1.75rem 1.25rem;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  position: relative;
+  transform: rotate(var(--card-rotate));
+  transition: var(--transition-bounce);
+
+  /* Animation: start hidden */
+  opacity: 0;
+  transform: translateY(30px) rotate(var(--card-rotate));
+}
+
+.stepCard.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--card-rotate));
+  animation: fadeInUp 0.5s ease var(--delay) both;
+}
+
+.stepCard:hover {
+  transform: rotate(0deg) translateY(-6px) !important;
+  box-shadow: var(--shadow-card-hover);
+}
+
+.stepNum {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: var(--ink-black);
+  opacity: 0.1;
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  line-height: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink-black);
+}
+
+.stepDesc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ink-black);
+  opacity: 0.85;
+}
+
+.matchCard {
+  border-color: var(--ink-black);
+  box-shadow: 4px 4px 0px var(--ink-black);
+}
+
+.matchCard:hover {
+  box-shadow: 6px 6px 0px var(--ink-black) !important;
+}
+
+.matchBadge {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--ink-black);
+  color: var(--cream-white);
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  border: 2px solid var(--ink-black);
+  box-shadow: 2px 2px 0px var(--ink-black);
+  transform: rotate(-3deg);
+}
+
+@media (max-width: 1024px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}

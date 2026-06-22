@@ -1,0 +1,80 @@
+.section {
+  background: var(--lime-mint);
+  padding: clamp(4rem, 10vw, 6rem) 0;
+  position: relative;
+  border-bottom: var(--border-thick);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.badge {
+  margin-bottom: 1.5rem;
+}
+
+.badgeInner {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--cream-white);
+  color: var(--ink-black);
+  border: var(--border-thick);
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow-card);
+  transform: rotate(-2deg);
+  animation: float 3s ease-in-out infinite;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4.5vw, 2.9rem);
+  line-height: 1.2;
+  color: var(--ink-black);
+  margin-bottom: 1rem;
+}
+
+.subtext {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--ink-black);
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+.decorRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.doodleTag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border: var(--border-thin);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sticker);
+  white-space: nowrap;
+  transition: var(--transition-bounce);
+}
+
+.doodleTag:hover {
+  transform: rotate(0deg) scale(1.08) !important;
+}

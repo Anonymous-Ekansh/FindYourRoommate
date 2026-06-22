@@ -1,0 +1,141 @@
+.section {
+  background: var(--soft-yellow);
+  padding: clamp(4rem, 10vw, 6rem) 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: var(--border-thick);
+}
+
+.doodleQ1 {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  transform: rotate(-10deg);
+  opacity: 0.6;
+}
+
+.doodleQ2 {
+  position: absolute;
+  top: 30%;
+  right: 8%;
+  transform: rotate(15deg);
+  opacity: 0.4;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+  text-align: center;
+  color: var(--ink-black);
+  margin-bottom: 2.5rem;
+}
+
+.headingSub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.6em;
+  opacity: 0.7;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faqItem {
+  background: var(--cream-white);
+  border: var(--border-thick);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-bounce);
+}
+
+.faqItem:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1rem;
+}
+
+.qText {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-black);
+}
+
+.qIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.verticalLine {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.open .verticalLine {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.open .qIcon {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 1.5rem;
+}
+
+.open .faqAnswer {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+.faqAnswer p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--ink-black);
+  opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+  .qText {
+    font-size: 0.85rem;
+  }
+
+  .doodleQ1,
+  .doodleQ2 {
+    display: none;
+  }
+}
