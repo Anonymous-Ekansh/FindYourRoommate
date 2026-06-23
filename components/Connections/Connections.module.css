@@ -206,3 +206,59 @@
   color: var(--ink-black);
   max-width: 500px;
 }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .tabs {
+    gap: 1rem;
+  }
+
+  .tab {
+    font-size: 1.1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+    transform: none;
+  }
+
+  .card:nth-child(even) {
+    transform: none;
+  }
+
+  .photoWrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .name {
+    font-size: 1.1rem;
+  }
+
+  .contactExpand {
+    padding: 0.75rem;
+  }
+
+  .contactRow {
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .emptyText {
+    font-size: 1.25rem;
+  }
+
+  .emptyState {
+    padding: 3rem 1rem;
+  }
+}

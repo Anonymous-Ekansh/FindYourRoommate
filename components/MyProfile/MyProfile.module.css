@@ -723,6 +723,20 @@
 
   .topBar {
     padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .connectionsBtn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .backBtn {
+    font-size: 0.85rem;
   }
 
   .bottomInner {
@@ -736,5 +750,32 @@
 
   .modalCard {
     transform: none;
+  }
+
+  .sectionHeader {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .previewName {
+    font-size: 1.5rem;
+  }
+
+  .tapCardGroup {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .tapCard {
+    padding: 1rem 0.5rem;
+    transform: none;
+  }
+
+  .tapCard:nth-child(even) {
+    transform: none;
+  }
+
+  .deleteSection {
+    margin-top: 2rem;
   }
 }
