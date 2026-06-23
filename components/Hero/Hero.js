@@ -9,7 +9,6 @@ const profileCards = [
     avatar: "/avatars/avatar1.png",
     habits: ["Night Owl", "Clean Freak", "Gym Bro"],
     vibe: "Chill but focused",
-    budget: "₹8k–12k/mo",
     rotation: -3,
     top: "5%",
     left: "5%",
@@ -20,7 +19,6 @@ const profileCards = [
     avatar: "/avatars/avatar2.png",
     habits: ["Early Bird", "Neat-ish", "Music On"],
     vibe: "Creative chaos",
-    budget: "₹6k–10k/mo",
     rotation: 2.5,
     top: "25%",
     left: "55%",
@@ -31,7 +29,6 @@ const profileCards = [
     avatar: "/avatars/avatar3.png",
     habits: ["Flexible", "Tidy", "Quiet Study"],
     vibe: "Laid back",
-    budget: "₹7k–11k/mo",
     rotation: -1.5,
     top: "55%",
     left: "20%",
@@ -93,7 +90,6 @@ function ProfileCard({ card }) {
 
         <div className={styles.cardMeta}>
           <span className={styles.vibe}>{card.vibe}</span>
-          <span className={styles.budget}>{card.budget}</span>
         </div>
       </div>
     </div>
@@ -110,7 +106,7 @@ export default function Hero() {
             <span className={styles.squigglyWord}>stranger</span>
           </h1>
           <p className={styles.subheadline}>
-            Match with roommates based on habits, vibe, and budget — not luck.
+            Match with roommates based on habits, vibe, and preferences — not luck.
           </p>
           <div className={styles.ctaGroup}>
             <a href="/login" className={styles.primaryCta} id="hero-signup-cta">

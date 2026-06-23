@@ -143,9 +143,6 @@ export default function ProfileDetail({ profileId }) {
               <span className={`${styles.chip} ${styles.chipYellow}`}>
                 {profile.year} • {profile.branch}
               </span>
-              <span className={`${styles.chip} ${styles.chipMint}`}>
-                ₹{profile.budget_min} – ₹{profile.budget_max}/mo
-              </span>
             </div>
             <p className={styles.about}>{profile.about_me}</p>
           </div>

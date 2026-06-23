@@ -6,7 +6,7 @@ const steps = [
   {
     num: "01",
     title: "Create your profile",
-    desc: "Habits, budget, vibe — takes 2 minutes, not an essay.",
+    desc: "Habits, vibe, preferences — takes 2 minutes, not an essay.",
     bg: "var(--cream-white)",
     rotate: -2,
   },

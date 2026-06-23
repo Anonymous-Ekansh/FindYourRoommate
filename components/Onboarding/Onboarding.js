@@ -33,8 +33,6 @@ export default function Onboarding() {
     smoking: false,
     drinking: false,
     food_preference: "",
-    budget_min: "",
-    budget_max: "",
     share_pref: "",
     phone: "",
     instagram: "",
@@ -106,8 +104,8 @@ export default function Onboarding() {
         return false;
       }
     } else if (step === 6) {
-      if (!formData.budget_min || !formData.budget_max || !formData.share_pref) {
-        setError("Please fill out budget and contact preference.");
+      if (!formData.share_pref) {
+        setError("Please select a contact preference.");
         return false;
       }
       if (formData.share_pref === "phone" || formData.share_pref === "both") {
@@ -160,8 +158,6 @@ export default function Onboarding() {
         smoking: formData.smoking,
         drinking: formData.drinking,
         food_preference: formData.food_preference,
-        budget_min: Number(formData.budget_min),
-        budget_max: Number(formData.budget_max),
         share_pref: formData.share_pref,
         updated_at: new Date().toISOString(),
       });
@@ -353,16 +349,8 @@ export default function Onboarding() {
       case 6:
         return (
           <>
-            <h1 className={styles.stepTitle}>Money & Contact</h1>
+            <h1 className={styles.stepTitle}>Contact details</h1>
             <p className={styles.stepSubtitle}>how do we reach you?</p>
-            
-            <div className={styles.formGroup}>
-              <label className={styles.label}>Budget Range (₹/month)</label>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <input type="number" className={styles.input} value={formData.budget_min} onChange={(e) => handleChange("budget_min", e.target.value)} placeholder="Min" />
-                <input type="number" className={styles.input} value={formData.budget_max} onChange={(e) => handleChange("budget_max", e.target.value)} placeholder="Max" />
-              </div>
-            </div>
 
             <div className={styles.formGroup}>
               <label className={styles.label}>Share Contact Preference</label>

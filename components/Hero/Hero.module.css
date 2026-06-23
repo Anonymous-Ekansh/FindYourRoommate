@@ -268,13 +268,6 @@
   font-weight: 700;
 }
 
-.budget {
-  background: var(--cream-white);
-  border: 1px solid var(--ink-black);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-}
-
 /* ── Pushpins ── */
 .pushpin1 {
   position: absolute;

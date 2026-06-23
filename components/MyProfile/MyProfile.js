@@ -61,8 +61,6 @@ export default function MyProfile() {
     smoking: false,
     drinking: false,
     food_preference: "",
-    budget_min: "",
-    budget_max: "",
     share_pref: "",
     phone: "",
     instagram: "",
@@ -108,8 +106,6 @@ export default function MyProfile() {
           smoking: profileData.smoking || false,
           drinking: profileData.drinking || false,
           food_preference: profileData.food_preference || "",
-          budget_min: profileData.budget_min || "",
-          budget_max: profileData.budget_max || "",
           share_pref: profileData.share_pref || "",
           phone: contactData?.phone || "",
           instagram: contactData?.instagram || "",
@@ -174,8 +170,6 @@ export default function MyProfile() {
         smoking: formData.smoking,
         drinking: formData.drinking,
         food_preference: formData.food_preference,
-        budget_min: formData.budget_min ? Number(formData.budget_min) : null,
-        budget_max: formData.budget_max ? Number(formData.budget_max) : null,
         share_pref: formData.share_pref,
         updated_at: new Date().toISOString(),
       };
@@ -258,11 +252,7 @@ export default function MyProfile() {
                 <span className={`${styles.chip} ${styles.chipYellow}`}>
                   {formData.year || "Year"} {formData.branch ? `• ${formData.branch}` : ""}
                 </span>
-                {(formData.budget_min || formData.budget_max) && (
-                  <span className={`${styles.chip} ${styles.chipMint}`}>
-                    {formData.budget_min ? `₹${formData.budget_min}` : "?"} – {formData.budget_max ? `₹${formData.budget_max}` : "?"}/mo
-                  </span>
-                )}
+                {/* Removed budget chip */}
               </div>
               <p className={styles.previewAbout}>{formData.about_me || "Your bio will appear here..."}</p>
             </div>
@@ -494,31 +484,11 @@ export default function MyProfile() {
             </div>
           </div>
 
-          {/* Budget & Contact */}
+          {/* Contact Info */}
           <h2 className={styles.sectionHeader}>
-            Budget & Contact
+            Contact Info
             <SquigglyLine />
           </h2>
-
-          <div className={styles.formGroup}>
-            <label className={styles.label}>Budget Range (per month)</label>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <input
-                type="number"
-                className={styles.input}
-                value={formData.budget_min}
-                onChange={(e) => handleChange("budget_min", e.target.value)}
-                placeholder="Min"
-              />
-              <input
-                type="number"
-                className={styles.input}
-                value={formData.budget_max}
-                onChange={(e) => handleChange("budget_max", e.target.value)}
-                placeholder="Max"
-              />
-            </div>
-          </div>
 
           <div className={styles.formGroup}>
             <label className={styles.label}>Share Contact Preference</label>
