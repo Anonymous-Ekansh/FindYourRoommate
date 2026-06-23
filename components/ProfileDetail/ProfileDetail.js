@@ -10,9 +10,9 @@ const DotsDisplay = ({ value }) => {
   return (
     <div className={styles.dotsWrapper}>
       {[1, 2, 3, 4, 5].map((dot) => (
-        <div 
-          key={dot} 
-          className={`${styles.dot} ${dot <= value ? styles.dotFilled : ''}`} 
+        <div
+          key={dot}
+          className={`${styles.dot} ${dot <= value ? styles.dotFilled : ''}`}
         />
       ))}
     </div>
@@ -49,7 +49,7 @@ export default function ProfileDetail({ profileId }) {
         .select('*')
         .eq('id', profileId)
         .single();
-      
+
       if (!profileData) {
         router.push("/browse");
         return;
@@ -62,7 +62,7 @@ export default function ProfileDetail({ profileId }) {
         .select('id')
         .eq('sender_id', user.id)
         .eq('receiver_id', profileId);
-        
+
       if (sentData && sentData.length > 0) {
         setInterestSent(true);
       }
@@ -72,17 +72,17 @@ export default function ProfileDetail({ profileId }) {
         .from('matches')
         .select('*')
         .or(`and(user_a_id.eq.${user.id},user_b_id.eq.${profileId}),and(user_a_id.eq.${profileId},user_b_id.eq.${user.id})`);
-        
+
       if (matchData && matchData.length > 0) {
         setIsMatch(true);
-        
+
         // 4. Fetch contact info if matched
         const { data: contactData } = await supabase
           .from('contact_info')
           .select('*')
           .eq('user_id', profileId)
           .single();
-          
+
         if (contactData) {
           setContactInfo(contactData);
         }
@@ -136,7 +136,7 @@ export default function ProfileDetail({ profileId }) {
               <img src={profile.gender === 'Female' ? '/avatar-female.png' : '/avatar-male.png'} alt={profile.name} className={styles.heroPhoto} style={{ backgroundColor: 'var(--soft-yellow)' }} />
             )}
           </div>
-          
+
           <div className={styles.heroInfo}>
             <h1 className={styles.name}>{profile.name}</h1>
             <div className={styles.chipGroup}>
@@ -196,12 +196,12 @@ export default function ProfileDetail({ profileId }) {
           {isMatch ? (
             <>
               <div className={styles.matchBanner}>
-                You Matched! 
+                You Matched!
                 <svg width="24" height="24" viewBox="0 0 24 24" className={styles.confettiSvg} xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2L15 8L22 9L17 14L18 21L12 17L6 21L7 14L2 9L9 8L12 2Z" stroke="var(--ink-black)" strokeWidth="2" strokeLinejoin="round" />
                 </svg>
               </div>
-              
+
               {contactInfo && (
                 <div className={styles.contactCard}>
                   {contactInfo.phone && (
@@ -228,7 +228,7 @@ export default function ProfileDetail({ profileId }) {
               <button className={`${styles.actionBtn} ${styles.btnSent}`}>
                 Interest Sent ✓
               </button>
-              <span className={styles.sentSubtext}>waiting for them to match you back *eyes*</span>
+              <span className={styles.sentSubtext}>waiting for them to match you back</span>
             </>
           ) : (
             <button className={`${styles.actionBtn} ${styles.btnDefault}`} onClick={handleSendInterest}>
