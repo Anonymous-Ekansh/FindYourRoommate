@@ -5,7 +5,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: 100px; /* space for sticky bar */
+  padding-bottom: 220px; /* space for sticky bar including match content */
+  overflow-x: hidden;
 }
 
 /* ── Top Bar ── */
@@ -176,12 +177,14 @@
   width: 100%;
   background-color: var(--cream-white);
   border-top: 4px solid var(--ink-black);
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 .actionWrapper {
@@ -302,8 +305,8 @@
   }
   
   .heroPhotoWrapper {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
   
   .chipGroup {
@@ -316,5 +319,42 @@
   
   .content {
     padding: 0 1rem 2rem;
+  }
+
+  .topBar {
+    padding: 1rem;
+  }
+
+  .name {
+    font-size: 1.75rem;
+  }
+
+  .about {
+    font-size: 1rem;
+  }
+
+  .bottomBar {
+    padding: 1rem;
+    max-height: 45vh;
+  }
+
+  .actionBtn {
+    font-size: 1.125rem;
+    padding: 0.75rem;
+  }
+
+  .matchBanner {
+    font-size: 1.125rem;
+    padding: 0.75rem;
+  }
+
+  .contactCard {
+    transform: none;
+  }
+
+  .contactRow {
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }

@@ -21,6 +21,7 @@ export default function Browse() {
   // Filters state
   const [filters, setFilters] = useState({
     year: [],
+    gender: "",
     branch: "",
     sleep: "",
     food: "",
@@ -105,6 +106,7 @@ export default function Browse() {
   const filteredProfiles = useMemo(() => {
     return profiles.filter(p => {
       if (filters.year.length > 0 && !filters.year.includes(p.year)) return false;
+      if (filters.gender && p.gender !== filters.gender) return false;
       if (filters.branch && !p.branch.toLowerCase().includes(filters.branch.toLowerCase())) return false;
       if (filters.sleep && p.sleep_schedule !== filters.sleep) return false;
       if (filters.food && p.food_preference !== filters.food) return false;
@@ -131,11 +133,6 @@ export default function Browse() {
             Who's interested?
           </Link>
           <Link href="/profile/me" className={styles.navProfile}>
-            <img 
-              src={currentUser?.user_metadata?.avatar_url || "/avatar-male.png"} 
-              alt="My Avatar" 
-              className={styles.avatar} 
-            />
             My Profile
           </Link>
         </div>
@@ -145,6 +142,19 @@ export default function Browse() {
       <div className={styles.filterWrapper}>
         <span className={styles.filterLabel}>Filters</span>
         <div className={styles.filterScroll}>
+          {/* Gender Filter */}
+          <div className={styles.filterGroup}>
+            {['Male', 'Female'].map(opt => (
+              <button
+                key={opt}
+                className={`${styles.filterPill} ${filters.gender === opt ? styles.filterPillActive : ''}`}
+                onClick={() => toggleFilter('gender', opt)}
+              >
+                {opt}
+              </button>
+            ))}
+          </div>
+
           {/* Year Filter */}
           <div className={styles.filterGroup}>
             {['1st Year', '2nd Year', '3rd Year', '4th Year', 'Masters'].map(yr => (
