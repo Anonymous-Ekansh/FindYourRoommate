@@ -22,7 +22,7 @@ export default function Footer() {
 
         <div className={styles.bottomRow}>
           <p className={styles.credit}>
-            Built by students, for students.
+            Brought to you by Ekansh and one and only Ananya ma'am
           </p>
           <p className={styles.copyright}>
             © 2026 Roomy
