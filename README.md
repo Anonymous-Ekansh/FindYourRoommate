@@ -88,7 +88,6 @@ Roomy aims to help SNU students find roommates they're genuinely compatible with
 * Verified SNU email authentication
 * Roommate recommendations
 * Saved profiles
-* Admin dashboard
 * Profile verification
 
 ---
