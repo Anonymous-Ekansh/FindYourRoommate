@@ -143,7 +143,7 @@ export default function NotificationBanner() {
   return (
     <div
       onClick={handleNavigation}
-      className={`${styles.bannerContainer} rounded-2xl flex items-center justify-between cursor-pointer`}
+      className={`${styles.bannerContainer} flex items-center justify-between cursor-pointer`}
       id="notification-banner"
       role="link"
       tabIndex={0}
@@ -153,6 +153,24 @@ export default function NotificationBanner() {
         }
       }}
     >
+      {/* Tape Strip Decoration (matching Hero ProfileCard wobbly theme) */}
+      <div className={styles.tapeStrip}>
+        <svg width="70" height="26" viewBox="0 0 70 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect
+            x="2"
+            y="4"
+            width="66"
+            height="18"
+            rx="2"
+            fill="var(--soft-yellow)"
+            fillOpacity="0.75"
+            stroke="var(--ink-black)"
+            strokeWidth="1.5"
+            strokeDasharray="4 2"
+          />
+        </svg>
+      </div>
+
       <div className="flex items-center gap-4 flex-1">
         {/* Avatars Stack (Far Left) */}
         <div className={`${styles.avatarStack} flex items-center`}>
@@ -203,7 +221,7 @@ export default function NotificationBanner() {
 
       {/* CTA Button (Far Right) */}
       <button
-        className={`${styles.ctaButton} rounded-full flex items-center gap-1.5`}
+        className={`${styles.ctaButton} flex items-center gap-1.5`}
         onClick={(e) => {
           e.stopPropagation(); // Prevent duplicate navigation triggers
           handleNavigation();
