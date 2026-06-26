@@ -5,6 +5,7 @@ import { createBrowserClient } from "@supabase/ssr";
 import { useRouter } from "next/navigation";
 import styles from "./Browse.module.css";
 import Link from "next/link";
+import NotificationBanner from "../NotificationBanner/NotificationBanner";
 
 export default function Browse() {
   const router = useRouter();
@@ -241,6 +242,7 @@ export default function Browse() {
 
       {/* Main Grid */}
       <main className={styles.mainContent}>
+        <NotificationBanner />
         {loading ? (
           <div className={styles.grid}>
             {[...Array(6)].map((_, i) => (
